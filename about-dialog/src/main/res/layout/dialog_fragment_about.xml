@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2014-2015 Oleg Kan, @Simplaapliko
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/dialog_horizontal_margin"
+    android:paddingRight="@dimen/dialog_horizontal_margin"
+    android:paddingTop="@dimen/dialog_vertical_margin"
+    android:paddingBottom="@dimen/dialog_vertical_margin">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:dividerHorizontal"
+        android:showDividers="middle"
+        android:dividerPadding="8dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dialog_element_vertical_padding">
+
+            <ImageView
+                tools:ignore="ContentDescription"
+                android:id="@+id/app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="12dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                style="@style/AppTheme.TextView.Medium"
+                android:id="@+id/app_name" />
+
+            <TextView
+                style="@style/AppTheme.TextView.Small"
+                android:id="@+id/app_version" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/developer_group"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dialog_element_vertical_padding"
+            android:paddingBottom="@dimen/dialog_element_vertical_padding">
+
+            <TextView
+                style="@style/AppTheme.TextView.Small"
+                android:text="@string/fragment_about_developed_by" />
+
+            <TextView
+                style="@style/AppTheme.TextView.Small"
+                android:id="@+id/developer" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/feedback_email_group"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dialog_element_vertical_padding"
+            android:paddingBottom="@dimen/dialog_element_vertical_padding">
+
+            <TextView
+                style="@style/AppTheme.TextView.Small"
+                android:maxLines="3"
+                android:text="@string/fragment_about_feedback" />
+
+            <TextView
+                style="@style/AppTheme.TextView.Small"
+                android:id="@+id/feedback_email"
+                android:background="?android:attr/selectableItemBackground" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/more_from_developer_group"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dialog_element_vertical_padding"
+            android:paddingBottom="@dimen/dialog_element_vertical_padding">
+
+            <TextView
+                android:id="@+id/more_from_developer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableRight="@mipmap/ic_google_play_grey600_24dp_about_dialog"
+                android:drawableEnd="@mipmap/ic_google_play_grey600_24dp_about_dialog"
+                android:drawablePadding="8dp"
+                android:text="@string/fragment_about_more_from_developer"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:maxLines="3" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
