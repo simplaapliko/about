@@ -5,8 +5,8 @@ A simple library to show dialog with information about your application.
 
 **Gradle**
 
- - 	Add the following to your `build.gradle`:
- ```gradle
+Add the following to your `build.gradle`:
+```gradle
 repositories {
     jcenter()
 }
