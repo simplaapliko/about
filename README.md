@@ -3,7 +3,7 @@ A simple library to show dialog with information about your application.
 
 ## Usage
 
-Gradle**
+**Gradle**
 
  - 	Add the following to your `build.gradle`:
  ```gradle
