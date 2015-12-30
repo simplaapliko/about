@@ -7,13 +7,13 @@ A simple library to show dialog with information about your application.
 
  - 	Add the following to your `build.gradle`:
  ```gradle
-  repositories {
-      jcenter()
-  }
+repositories {
+    jcenter()
+}
 
-    dependencies {
-        compile 'com.simplaapliko:about-dialog:0.9.0'
-    }
+dependencies {
+    compile 'com.simplaapliko:about-dialog:0.9.0'
+}
 ```
 
 ## License
