@@ -18,5 +18,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
 
-    <string name="ad_fragment_about_more_from_developer_link">https://play.google.com/store/apps/developer?id=</string>
+    <string name="a_fragment_about_more_from_developer_link">https://play.google.com/store/apps/developer?id=</string>
 </resources>

@@ -16,14 +16,14 @@
   -->
 
 <resources>
-    <string name="u_feedback_subject">Обратная связь</string>
-    <string name="u_feedback_dialog_intent_chooser_title">Что использовать?</string>
-    <string name="u_feedback_device">Устройство:</string>
-    <string name="u_feedback_android_version">Версия Android:</string>
-    <string name="u_feedback_app_version">Версия приложения:</string>
-    <string name="u_feedback_region">Язык / Регион:</string>
-    <string name="u_feedback_screen">Экран:</string>
-    <string name="u_feedback_screen_width">ширина:</string>
-    <string name="u_feedback_screen_height">высота:</string>
-    <string name="u_feedback_message">Напишите разработчику о проблеме или предложении.\nСпасибо!\n_____</string>
+    <string name="a_feedback_subject">Обратная связь</string>
+    <string name="a_feedback_dialog_intent_chooser_title">Что использовать?</string>
+    <string name="a_feedback_device">Устройство:</string>
+    <string name="a_feedback_android_version">Версия Android:</string>
+    <string name="a_feedback_app_version">Версия приложения:</string>
+    <string name="a_feedback_region">Язык / Регион:</string>
+    <string name="a_feedback_screen">Экран:</string>
+    <string name="a_feedback_screen_width">ширина:</string>
+    <string name="a_feedback_screen_height">высота:</string>
+    <string name="a_feedback_message">Напишите разработчику о проблеме или предложении.\nСпасибо!\n_____</string>
 </resources>

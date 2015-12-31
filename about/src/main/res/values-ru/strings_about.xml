@@ -15,7 +15,7 @@
   -->
 
 <resources>
-    <string name="ad_fragment_about_developed_by">Автор:</string>
-    <string name="ad_fragment_about_feedback">Напишите разработчику о проблеме или предложении:</string>
-    <string name="ad_fragment_about_more_from_developer">Другие приложения разработчика</string>
+    <string name="a_fragment_about_developed_by">Автор:</string>
+    <string name="a_fragment_about_feedback">Напишите разработчику о проблеме или предложении:</string>
+    <string name="a_fragment_about_more_from_developer">Другие приложения разработчика</string>
 </resources>

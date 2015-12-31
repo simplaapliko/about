@@ -19,41 +19,41 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="ad_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="a_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
     </style>
 
     <!-- root - text view -->
 
-    <style name="ad_AppTheme.TextView" parent="ad_AppTheme">
+    <style name="a_AppTheme.TextView" parent="a_AppTheme">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">1</item>
-        <item name="android:textColor">@color/ad_color_text</item>
+        <item name="android:textColor">@color/a_color_text</item>
     </style>
 
     <!-- text views -->
 
-    <style name="ad_AppTheme.TextView.Small" parent="ad_AppTheme.TextView">
+    <style name="a_AppTheme.TextView.Small" parent="a_AppTheme.TextView">
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
     </style>
 
-    <style name="ad_AppTheme.TextView.Medium" parent="ad_AppTheme.TextView">
+    <style name="a_AppTheme.TextView.Medium" parent="a_AppTheme.TextView">
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
     </style>
 
-    <style name="ad_AppTheme.TextView.Bold" parent="ad_AppTheme.TextView">
+    <style name="a_AppTheme.TextView.Bold" parent="a_AppTheme.TextView">
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="ad_AppTheme.TextView.Small.Bold" parent="ad_AppTheme.TextView">
+    <style name="a_AppTheme.TextView.Small.Bold" parent="a_AppTheme.TextView">
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="ad_AppTheme.TextView.Medium.Bold" parent="ad_AppTheme.TextView">
+    <style name="a_AppTheme.TextView.Medium.Bold" parent="a_AppTheme.TextView">
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
         <item name="android:textStyle">bold</item>
     </style>

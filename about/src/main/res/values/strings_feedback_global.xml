@@ -19,5 +19,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
 
-    <string name="u_feedback_screen_density_dpi">dpi:</string>
+    <string name="a_feedback_screen_density_dpi">dpi:</string>
 </resources>

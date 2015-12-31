@@ -16,7 +16,7 @@
   -->
 
 <resources>
-    <dimen name="ad_dialog_horizontal_padding">16dp</dimen>
-    <dimen name="ad_dialog_vertical_padding">10dp</dimen>
-    <dimen name="ad_dialog_element_vertical_padding">16dp</dimen>
+    <dimen name="a_dialog_horizontal_padding">16dp</dimen>
+    <dimen name="a_dialog_vertical_padding">10dp</dimen>
+    <dimen name="a_dialog_element_vertical_padding">16dp</dimen>
 </resources>

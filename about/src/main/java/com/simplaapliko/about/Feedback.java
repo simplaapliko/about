@@ -34,15 +34,15 @@ public final class Feedback {
 
         String newLine = "\n";
         StringBuilder body = new StringBuilder();
-        body.append(context.getString(R.string.u_feedback_device));
+        body.append(context.getString(R.string.a_feedback_device));
         body.append(Build.MANUFACTURER);
         body.append(" ");
         body.append(Build.MODEL);
         body.append(newLine);
-        body.append(context.getString(R.string.u_feedback_android_version));
+        body.append(context.getString(R.string.a_feedback_android_version));
         body.append(Build.VERSION.RELEASE);
         body.append(newLine);
-        body.append(context.getString(R.string.u_feedback_region));
+        body.append(context.getString(R.string.a_feedback_region));
         body.append(Locale.getDefault().getLanguage());
         body.append(" / ");
         body.append(Locale.getDefault().getCountry());
@@ -50,7 +50,7 @@ public final class Feedback {
 
         String appVersion = AppInfo.getAppVersion(context);
 
-        body.append(context.getString(R.string.u_feedback_app_version));
+        body.append(context.getString(R.string.a_feedback_app_version));
         body.append(appVersion);
         body.append(newLine);
 
@@ -59,22 +59,22 @@ public final class Feedback {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        body.append(context.getString(R.string.u_feedback_screen));
-        body.append(context.getString(R.string.u_feedback_screen_width));
+        body.append(context.getString(R.string.a_feedback_screen));
+        body.append(context.getString(R.string.a_feedback_screen_width));
         body.append(Integer.toString(width));
         body.append(" ");
-        body.append(context.getString(R.string.u_feedback_screen_height));
+        body.append(context.getString(R.string.a_feedback_screen_height));
         body.append(Integer.toString(height));
         body.append(" ");
-        body.append(context.getString(R.string.u_feedback_screen_density_dpi));
+        body.append(context.getString(R.string.a_feedback_screen_density_dpi));
         body.append(Float.toString(dm.densityDpi/160));
         body.append(newLine);
         body.append(newLine);
-        body.append(context.getString(R.string.u_feedback_message));
+        body.append(context.getString(R.string.a_feedback_message));
         body.append(newLine);
         body.append(newLine);
 
-        String subject = "[" + appName + "] " + context.getString(R.string.u_feedback_subject);
+        String subject = "[" + appName + "] " + context.getString(R.string.a_feedback_subject);
 
         String uriText = "mailto:" + email +
                 "?subject=" + Uri.encode(subject) +
@@ -86,7 +86,7 @@ public final class Feedback {
         feedback.setData(uri);
         context.startActivity(Intent.createChooser(
                 feedback,
-                context.getString(R.string.u_feedback_dialog_intent_chooser_title)));
+                context.getString(R.string.a_feedback_dialog_intent_chooser_title)));
 
     }
 
