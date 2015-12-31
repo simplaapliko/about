@@ -24,14 +24,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.simplaapliko.about.AboutDialog;
+import com.simplaapliko.about.AppInfo;
+import com.simplaapliko.about.Feedback;
 
-public class MainActivityFragment extends Fragment implements DialogInterface.OnDismissListener {
+public class MainActivityFragment extends Fragment implements DialogInterface.OnDismissListener, View.OnClickListener {
+
+    private TextView mAppVersion;
 
     public MainActivityFragment() {
     }
@@ -39,48 +41,61 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
     @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        final CheckBox hasPositiveButton =(CheckBox) view.findViewById(R.id.has_positive_button);
+        mAppVersion = (TextView) rootView.findViewById(R.id.app_version);
 
-        final EditText applicationName =(EditText) view.findViewById(R.id.app_name);
-        final EditText developerId =(EditText) view.findViewById(R.id.developer_id);
-        final EditText developerName =(EditText) view.findViewById(R.id.developer_name);
-        final EditText feedbackEmail =(EditText) view.findViewById(R.id.feedback_email);
+        rootView.findViewById(R.id.get_version)
+                .setOnClickListener(this);
 
-        applicationName.setText("About Dialog");
-        developerId.setText("Simplaapliko");
-        developerName.setText("Oleg Kan");
-        feedbackEmail.setText("simplaapliko@gmail.com");
+        rootView.findViewById(R.id.get_version_name)
+                .setOnClickListener(this);
 
-        Button showDialog = (Button) view.findViewById(R.id.show_dialog);
-        showDialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        rootView.findViewById(R.id.get_version_code)
+                .setOnClickListener(this);
 
-                try {
-                    DialogFragment dialog = new AboutDialog.Builder()
-                            .setAppName(applicationName.getText().toString())
-                            .setAppIcon(R.mipmap.ic_launcher)
-                            .setDeveloperName(developerName.getText().toString().trim().length() == 0 ? null : developerName.getText().toString())
-                            .setDeveloperId(developerId.getText().toString().trim().length() == 0 ? null : developerId.getText().toString())
-                            .setFeedbackEmail(feedbackEmail.getText().toString().trim().length() == 0 ? null : feedbackEmail.getText().toString())
-                            .setHasPositiveButton(hasPositiveButton.isChecked())
-                            .build();
+        rootView.findViewById(R.id.send_feedback)
+                .setOnClickListener(this);
 
-                    ((AboutDialog) dialog).setOnDismissListener(MainActivityFragment.this);
-                    dialog.show(getFragmentManager(), AboutDialog.class.getSimpleName());
-                } catch (IllegalArgumentException ex) {
-                    Toast.makeText(getContext(), ex.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        rootView.findViewById(R.id.show_dialog)
+                .setOnClickListener(this);
 
-        return view;
+        return rootView;
     }
 
     @Override
     public void onDismiss(DialogInterface dialog) {
         Toast.makeText(getContext(), "Dialog dismissed", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.get_version:
+                mAppVersion.setText(AppInfo.getAppVersion(getContext()));
+                break;
+            case R.id.get_version_name:
+                mAppVersion.setText(AppInfo.getAppVersionName(getContext()));
+                break;
+            case R.id.get_version_code:
+                mAppVersion.setText(String.valueOf(AppInfo.getAppVersionCode(getContext())));
+                break;
+            case R.id.send_feedback:
+                Feedback.sendFeedback(getContext(), "myEmail@mail.com", "Util");
+                break;
+            case R.id.show_dialog:
+                DialogFragment dialog = new AboutDialog.Builder()
+                        .setAppName("Application Name")
+                        .setAppIcon(R.mipmap.ic_launcher)
+                        .setDeveloperName("Developer")
+                        .setDeveloperId("Developer")
+                        .setFeedbackEmail("developer@email.com")
+                        .setHasPositiveButton(true)
+                        .build();
+
+                ((AboutDialog) dialog).setOnDismissListener(MainActivityFragment.this);
+                dialog.show(getFragmentManager(), AboutDialog.class.getSimpleName());
+                break;
+        }
     }
 }
