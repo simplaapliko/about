@@ -19,6 +19,7 @@ package com.simplaapliko.aboutdialog.sample;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,7 +59,7 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
             public void onClick(View v) {
 
                 try {
-                    AboutDialog dialog = new AboutDialog.Builder()
+                    DialogFragment dialog = new AboutDialog.Builder()
                             .setAppName(applicationName.getText().toString())
                             .setAppIcon(R.mipmap.ic_launcher)
                             .setDeveloperName(developerName.getText().toString().trim().length() == 0 ? null : developerName.getText().toString())
@@ -67,7 +68,7 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
                             .setHasPositiveButton(hasPositiveButton.isChecked())
                             .build();
 
-                    dialog.setOnDismissListener(MainActivityFragment.this);
+                    ((AboutDialog) dialog).setOnDismissListener(MainActivityFragment.this);
                     dialog.show(getFragmentManager(), AboutDialog.class.getSimpleName());
                 } catch (IllegalArgumentException ex) {
                     Toast.makeText(getContext(), ex.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
