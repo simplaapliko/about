@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.simplaapliko.util.sample;
+package com.simplaapliko.about.sample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
