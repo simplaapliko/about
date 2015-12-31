@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.simplaapliko.aboutdialog.sample;
+package com.simplaapliko.about.sample;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -29,7 +29,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.simplaapliko.aboutdialog.AboutDialog;
+import com.simplaapliko.about.AboutDialog;
 
 public class MainActivityFragment extends Fragment implements DialogInterface.OnDismissListener {
 

@@ -15,7 +15,7 @@
   ~ limitations under the License.
   -->
 
-<manifest package="com.simplaapliko.aboutdialog.sample"
+<manifest package="com.simplaapliko.about.sample"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -25,7 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.simplaapliko.aboutdialog.sample.MainActivity"
+            android:name="com.simplaapliko.about.sample.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 

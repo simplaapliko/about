@@ -1,5 +1,5 @@
-# AboutDialog
-A simple library to show dialog with information about your application.
+# About
+A simple library to show information about your application.
 
 ## Usage
 
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.simplaapliko:about-dialog:0.9.0'
+    compile 'com.simplaapliko:about:0.9.0'
 }
 ```
 

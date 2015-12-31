@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.simplaapliko.aboutdialog.sample;
+package com.simplaapliko.about.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
