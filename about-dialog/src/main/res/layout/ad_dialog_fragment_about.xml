@@ -20,10 +20,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/dialog_horizontal_margin"
-    android:paddingRight="@dimen/dialog_horizontal_margin"
-    android:paddingTop="@dimen/dialog_vertical_margin"
-    android:paddingBottom="@dimen/dialog_vertical_margin">
+    android:paddingLeft="@dimen/ad_dialog_horizontal_padding"
+    android:paddingRight="@dimen/ad_dialog_horizontal_padding"
+    android:paddingTop="@dimen/ad_dialog_vertical_padding"
+    android:paddingBottom="@dimen/ad_dialog_vertical_padding">
 
     <LinearLayout
         android:orientation="vertical"
@@ -37,7 +37,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/dialog_element_vertical_padding">
+            android:paddingBottom="@dimen/ad_dialog_element_vertical_padding">
 
             <ImageView
                 tools:ignore="ContentDescription"
@@ -49,11 +49,11 @@
                 android:layout_gravity="center_horizontal" />
 
             <TextView
-                style="@style/AppTheme.TextView.Medium"
+                style="@style/ad_AppTheme.TextView.Medium"
                 android:id="@+id/app_name" />
 
             <TextView
-                style="@style/AppTheme.TextView.Small"
+                style="@style/ad_AppTheme.TextView.Small"
                 android:id="@+id/app_version" />
 
         </LinearLayout>
@@ -63,15 +63,15 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/dialog_element_vertical_padding"
-            android:paddingBottom="@dimen/dialog_element_vertical_padding">
+            android:paddingTop="@dimen/ad_dialog_element_vertical_padding"
+            android:paddingBottom="@dimen/ad_dialog_element_vertical_padding">
 
             <TextView
-                style="@style/AppTheme.TextView.Small"
-                android:text="@string/fragment_about_developed_by" />
+                style="@style/ad_AppTheme.TextView.Small"
+                android:text="@string/ad_fragment_about_developed_by" />
 
             <TextView
-                style="@style/AppTheme.TextView.Small"
+                style="@style/ad_AppTheme.TextView.Small"
                 android:id="@+id/developer" />
 
         </LinearLayout>
@@ -81,16 +81,16 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/dialog_element_vertical_padding"
-            android:paddingBottom="@dimen/dialog_element_vertical_padding">
+            android:paddingTop="@dimen/ad_dialog_element_vertical_padding"
+            android:paddingBottom="@dimen/ad_dialog_element_vertical_padding">
 
             <TextView
-                style="@style/AppTheme.TextView.Small"
+                style="@style/ad_AppTheme.TextView.Small"
                 android:maxLines="3"
-                android:text="@string/fragment_about_feedback" />
+                android:text="@string/ad_fragment_about_feedback" />
 
             <TextView
-                style="@style/AppTheme.TextView.Small"
+                style="@style/ad_AppTheme.TextView.Small"
                 android:id="@+id/feedback_email"
                 android:background="?android:attr/selectableItemBackground" />
 
@@ -101,8 +101,8 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/dialog_element_vertical_padding"
-            android:paddingBottom="@dimen/dialog_element_vertical_padding">
+            android:paddingTop="@dimen/ad_dialog_element_vertical_padding"
+            android:paddingBottom="@dimen/ad_dialog_element_vertical_padding">
 
             <TextView
                 android:id="@+id/more_from_developer"
@@ -111,10 +111,10 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:background="?android:attr/selectableItemBackground"
-                android:drawableRight="@mipmap/ic_google_play_grey600_24dp_about_dialog"
-                android:drawableEnd="@mipmap/ic_google_play_grey600_24dp_about_dialog"
+                android:drawableRight="@mipmap/ad_ic_google_play_grey600_24dp_about_dialog"
+                android:drawableEnd="@mipmap/ad_ic_google_play_grey600_24dp_about_dialog"
                 android:drawablePadding="8dp"
-                android:text="@string/fragment_about_more_from_developer"
+                android:text="@string/ad_fragment_about_more_from_developer"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:maxLines="3" />
 

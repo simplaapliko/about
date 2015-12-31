@@ -178,7 +178,7 @@ public class AboutDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // get root view
-        View rootView = getActivity().getLayoutInflater().inflate(R.layout.dialog_fragment_about, null);
+        View rootView = getActivity().getLayoutInflater().inflate(R.layout.ad_dialog_fragment_about, null);
 
         initUiWidgets(rootView);
 
@@ -275,7 +275,7 @@ public class AboutDialog extends DialogFragment {
                 @Override
                 public void onClick(View v) {
 
-                    String uri = getString(R.string.fragment_about_more_from_developer_link) + mDeveloperId;
+                    String uri = getString(R.string.ad_fragment_about_more_from_developer_link) + mDeveloperId;
 
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                     startActivity(intent);
