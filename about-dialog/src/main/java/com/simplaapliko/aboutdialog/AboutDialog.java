@@ -119,7 +119,7 @@ public class AboutDialog extends DialogFragment {
     private boolean mHasPositiveButton;
 
 
-    //Factory
+    // Factory
 
     private static AboutDialog newInstance(String appName,
                                           int appIcon,
