@@ -30,9 +30,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.simplaapliko.util.AppInfo;
-import com.simplaapliko.util.Feedback;
-
 public class AboutDialog extends DialogFragment {
 
     // Inner classes
