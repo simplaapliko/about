@@ -90,4 +90,16 @@ public final class Feedback {
 
     }
 
+    public static void showMoreFromDeveloper(Context context, int developerId) {
+        showMoreFromDeveloper(context, context.getString(developerId));
+    }
+
+    public static void showMoreFromDeveloper(Context context, String developerId) {
+
+        String uri = context.getString(R.string.a_fragment_about_more_from_developer_link) + developerId;
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        context.startActivity(intent);
+    }
+
 }

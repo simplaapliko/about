@@ -19,8 +19,6 @@ package com.simplaapliko.about;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -258,7 +256,7 @@ public class AboutDialog extends DialogFragment {
             feedbackEmailTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Feedback.sendFeedback(getActivity(), mFeedbackEmail, mAppName);
+                    Feedback.sendFeedback(getContext(), mFeedbackEmail, mAppName);
                 }
             });
         } else {
@@ -271,11 +269,7 @@ public class AboutDialog extends DialogFragment {
             moveFromDeveloper.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    String uri = getString(R.string.a_fragment_about_more_from_developer_link) + mDeveloperId;
-
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                    startActivity(intent);
+                    Feedback.showMoreFromDeveloper(getContext(), mDeveloperId);
                 }
             });
         } else {
