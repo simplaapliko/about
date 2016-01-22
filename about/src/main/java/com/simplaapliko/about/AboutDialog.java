@@ -196,6 +196,13 @@ public class AboutDialog extends DialogFragment {
     }
 
     @Override
+    public void onDetach() {
+        super.onDetach();
+
+        mOnDismissListener = null;
+    }
+
+    @Override
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);
 
@@ -204,13 +211,8 @@ public class AboutDialog extends DialogFragment {
         }
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-    }
 
-
-    // Class methods
+    // Public API
 
     public DialogInterface.OnDismissListener getOnDismissListener() {
         return mOnDismissListener;
@@ -219,6 +221,9 @@ public class AboutDialog extends DialogFragment {
     public void setOnDismissListener(final DialogInterface.OnDismissListener onDismissListener) {
         mOnDismissListener = onDismissListener;
     }
+
+
+    // Private API
 
     private void initUiWidgets(View rootView) {
 
