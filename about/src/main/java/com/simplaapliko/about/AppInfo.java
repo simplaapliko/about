@@ -35,8 +35,9 @@ public final class AppInfo {
     public static String getAppVersionName(Context context) {
         String versionName;
         try {
-            PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_META_DATA);
-            versionName = pInfo.versionName;
+            PackageInfo packageInfo = context.getPackageManager()
+                    .getPackageInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+            versionName = packageInfo.versionName;
         } catch (PackageManager.NameNotFoundException e) {
             versionName = "";
         }
@@ -49,8 +50,9 @@ public final class AppInfo {
     public static int getAppVersionCode(Context context) {
         int versionCode;
         try {
-            PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_META_DATA);
-            versionCode = pInfo.versionCode;
+            PackageInfo packageInfo = context.getPackageManager()
+                    .getPackageInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+            versionCode = packageInfo.versionCode;
         } catch (PackageManager.NameNotFoundException e) {
             versionCode = 0;
         }
