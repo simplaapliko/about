@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (C) 2014-2015 Oleg Kan, @Simplaapliko
   ~
@@ -15,14 +16,5 @@
   -->
 
 <resources>
-    <string name="app_name">About Sample</string>
-
-    <string name="get_app_version">Get app version</string>
-    <string name="get_app_version_name">Get app version name</string>
-    <string name="get_app_version_code">Get app version code</string>
-    <string name="send_feedback">Send feedback</string>
-    <string name="share_this_app">Share this app</string>
-
-    <string name="show_about_dialog">Show About Dialog</string>
-
+    <string name="a_share_this_app_subject">Поделиться с помощью:</string>
 </resources>

@@ -90,6 +90,18 @@ public final class Feedback {
 
     }
 
+    /**
+     * Starts activity chooser to send a message with information about this application.
+     */
+    public static void shareThisApp(Context context, String message) {
+
+        Intent send = new Intent(Intent.ACTION_SEND);
+        send.setType("text/plain");
+        send.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.a_share_this_app_subject));
+        send.putExtra(Intent.EXTRA_TEXT, message);
+        context.startActivity(Intent.createChooser(send, context.getString(R.string.a_share_this_app_subject)));
+    }
+
     public static void showMoreFromDeveloper(Context context, int developerId) {
         showMoreFromDeveloper(context, context.getString(developerId));
     }

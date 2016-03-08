@@ -63,6 +63,12 @@
             android:text="@string/send_feedback" />
 
         <Button
+            android:id="@+id/share_this_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/share_this_app" />
+
+        <Button
             android:id="@+id/show_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

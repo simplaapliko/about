@@ -57,6 +57,9 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
         rootView.findViewById(R.id.send_feedback)
                 .setOnClickListener(this);
 
+        rootView.findViewById(R.id.share_this_app)
+                .setOnClickListener(this);
+
         rootView.findViewById(R.id.show_dialog)
                 .setOnClickListener(this);
 
@@ -82,6 +85,9 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
                 break;
             case R.id.send_feedback:
                 Feedback.sendFeedback(getContext(), "myEmail@mail.com", "Util");
+                break;
+            case R.id.share_this_app:
+                Feedback.shareThisApp(getContext(), "This App has some nice features");
                 break;
             case R.id.show_dialog:
                 DialogFragment dialog = new AboutDialog.Builder()
