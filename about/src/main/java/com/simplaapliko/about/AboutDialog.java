@@ -283,5 +283,4 @@ public class AboutDialog extends DialogFragment {
         }
 
     }
-
 }

@@ -16,6 +16,7 @@
 
 package com.simplaapliko.about;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -82,10 +83,17 @@ public final class Feedback {
         Intent feedback = new Intent(Intent.ACTION_SENDTO);
         feedback.setType("message/rfc822");
         feedback.setData(uri);
-        context.startActivity(Intent.createChooser(
-                feedback,
-                context.getString(R.string.a_feedback_dialog_intent_chooser_title)));
-
+        if (context instanceof Activity) {
+            context.startActivity(Intent.createChooser(
+                    feedback,
+                    context.getString(R.string.a_feedback_dialog_intent_chooser_title)));
+        } else {
+            Intent intent = Intent.createChooser(
+                    feedback,
+                    context.getString(R.string.a_feedback_dialog_intent_chooser_title));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        }
     }
 
     /**
@@ -93,11 +101,20 @@ public final class Feedback {
      */
     public static void shareThisApp(Context context, String message) {
 
-        Intent send = new Intent(Intent.ACTION_SEND);
-        send.setType("text/plain");
-        send.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.a_share_this_app_subject));
-        send.putExtra(Intent.EXTRA_TEXT, message);
-        context.startActivity(Intent.createChooser(send, context.getString(R.string.a_share_this_app_subject)));
+        String subject = context.getString(R.string.a_share_this_app_subject);
+
+        Intent share = new Intent(Intent.ACTION_SEND);
+        share.setType("text/plain");
+        share.putExtra(Intent.EXTRA_SUBJECT, subject);
+        share.putExtra(Intent.EXTRA_TEXT, message);
+
+        if (context instanceof Activity) {
+            context.startActivity(Intent.createChooser(share, subject));
+        } else {
+            Intent intent = Intent.createChooser(share, subject);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        }
     }
 
     public static void showMoreFromDeveloper(Context context, int developerId) {
@@ -108,8 +125,14 @@ public final class Feedback {
 
         String uri = context.getString(R.string.a_fragment_about_more_from_developer_link) + developerId;
 
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-        context.startActivity(intent);
-    }
+        Intent showMore = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
 
+        if (context instanceof Activity) {
+            context.startActivity(showMore);
+        } else {
+            Intent intent = Intent.createChooser(showMore, null);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        }
+    }
 }
