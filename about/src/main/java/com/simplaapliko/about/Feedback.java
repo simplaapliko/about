@@ -16,7 +16,6 @@
 
 package com.simplaapliko.about;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -54,8 +53,7 @@ public final class Feedback {
         body.append(appVersion);
         body.append(newLine);
 
-        DisplayMetrics dm = new DisplayMetrics();
-        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(dm);
+        DisplayMetrics dm = context.getResources().getDisplayMetrics();
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
