@@ -26,6 +26,7 @@ import android.support.v4.app.DialogFragment;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class AboutDialog extends DialogFragment {
@@ -39,7 +40,6 @@ public class AboutDialog extends DialogFragment {
         private String mDeveloperName;
         private String mDeveloperId;
         private String mFeedbackEmail;
-
         private boolean mHasPositiveButton;
 
         public Builder setAppName(String appName) {
@@ -116,12 +116,10 @@ public class AboutDialog extends DialogFragment {
 
     // Factory
 
-    private static AboutDialog newInstance(String appName,
-                                          int appIcon,
-                                          String developerName,
-                                          String developerId,
-                                          String feedbackEmail,
-                                          boolean hasPositiveButton) {
+    private static AboutDialog newInstance(
+            String appName, int appIcon,
+            String developerName, String developerId,
+            String feedbackEmail, boolean hasPositiveButton) {
 
         AboutDialog fragment = new AboutDialog();
         Bundle args = new Bundle();
@@ -255,22 +253,24 @@ public class AboutDialog extends DialogFragment {
         }
 
         if (mHasSendFeedbackToSection) {
+            rootView.findViewById(R.id.feedback_email_row)
+                    .setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Feedback.sendFeedback(getContext(), mFeedbackEmail, mAppName);
+                        }
+                    });
+
             TextView feedbackEmailTextView = (TextView) rootView.findViewById(R.id.feedback_email);
             feedbackEmailTextView.setTextColor(colorPrimaryDark);
             feedbackEmailTextView.setText(mFeedbackEmail);
-            feedbackEmailTextView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Feedback.sendFeedback(getContext(), mFeedbackEmail, mAppName);
-                }
-            });
         } else {
             rootView.findViewById(R.id.feedback_email_group)
                     .setVisibility(View.GONE);
         }
 
         if (mHasMoreFromDeveloperSection) {
-            TextView moveFromDeveloper = (TextView) rootView.findViewById(R.id.more_from_developer);
+            TableRow moveFromDeveloper = (TableRow) rootView.findViewById(R.id.more_from_developer_row);
             moveFromDeveloper.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

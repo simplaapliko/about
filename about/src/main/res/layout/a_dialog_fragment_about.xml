@@ -76,48 +76,59 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <TableLayout
             android:id="@+id/feedback_email_group"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/a_dialog_element_vertical_padding"
-            android:paddingBottom="@dimen/a_dialog_element_vertical_padding">
+            android:stretchColumns="0">
 
-            <TextView
-                style="@style/a_AppTheme.TextView.Small"
-                android:maxLines="3"
-                android:text="@string/a_fragment_about_feedback" />
-
-            <TextView
-                style="@style/a_AppTheme.TextView.Small"
-                android:id="@+id/feedback_email"
-                android:background="?android:attr/selectableItemBackground" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/more_from_developer_group"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/a_dialog_element_vertical_padding"
-            android:paddingBottom="@dimen/a_dialog_element_vertical_padding">
-
-            <TextView
-                android:id="@+id/more_from_developer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="center"
+            <TableRow
+                android:id="@+id/feedback_email_row"
+                android:orientation="vertical"
                 android:background="?android:attr/selectableItemBackground"
-                android:drawableRight="@drawable/a_ic_google_play_grey600_24dp_about_dialog"
-                android:drawableEnd="@drawable/a_ic_google_play_grey600_24dp_about_dialog"
-                android:drawablePadding="8dp"
-                android:text="@string/a_fragment_about_more_from_developer"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:maxLines="3" />
+                android:paddingTop="@dimen/a_dialog_element_vertical_padding"
+                android:paddingBottom="@dimen/a_dialog_element_vertical_padding">
 
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/a_AppTheme.TextView.Small"
+                        android:maxLines="3"
+                        android:text="@string/a_fragment_about_feedback" />
+
+                    <TextView
+                        style="@style/a_AppTheme.TextView.Small"
+                        android:id="@+id/feedback_email" />
+
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/more_from_developer_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0">
+
+            <TableRow
+                android:id="@+id/more_from_developer_row"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingTop="@dimen/a_dialog_element_vertical_padding"
+                android:paddingBottom="@dimen/a_dialog_element_vertical_padding">
+
+                <TextView
+                    style="@style/a_AppTheme.TextView.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableRight="@drawable/a_ic_google_play_grey600_24dp_about_dialog"
+                    android:drawableEnd="@drawable/a_ic_google_play_grey600_24dp_about_dialog"
+                    android:drawablePadding="8dp"
+                    android:text="@string/a_fragment_about_more_from_developer"
+                    android:maxLines="3" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 </ScrollView>
