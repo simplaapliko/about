@@ -1,4 +1,6 @@
 # About
+[![Build Status](https://travis-ci.org/simplaapliko/About.svg)](https://travis-ci.org/simplaapliko/About)
+
 A simple library to show information about your application.
 
 ## Usage
@@ -12,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.simplaapliko:about:0.9.8'
+    compile 'com.simplaapliko:about:0.9.9'
 }
 ```
 
