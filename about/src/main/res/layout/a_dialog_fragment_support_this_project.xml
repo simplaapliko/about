@@ -22,7 +22,8 @@
     android:paddingLeft="@dimen/a_dialog_horizontal_padding"
     android:paddingRight="@dimen/a_dialog_horizontal_padding"
     android:paddingTop="@dimen/a_dialog_vertical_padding"
-    android:paddingBottom="@dimen/a_dialog_vertical_padding">
+    android:paddingBottom="@dimen/a_dialog_vertical_padding"
+    >
 
     <LinearLayout
         android:orientation="vertical"
@@ -30,7 +31,8 @@
         android:layout_height="wrap_content"
         android:divider="?android:dividerHorizontal"
         android:showDividers="middle"
-        android:dividerPadding="8dp">
+        android:dividerPadding="8dp"
+        >
 
         <TextView
             android:id="@+id/info"
@@ -55,8 +57,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
-                android:drawableRight="@drawable/a_ic_gift_grey600_24dp"
-                android:drawableEnd="@drawable/a_ic_gift_grey600_24dp"
+                android:drawableRight="@mipmap/a_ic_gift_grey600_24dp"
+                android:drawableEnd="@mipmap/a_ic_gift_grey600_24dp"
                 android:drawablePadding="8dp"
                 android:text="@string/a_support_this_project"
                 style="@style/a_AppTheme.TextView.Small"
