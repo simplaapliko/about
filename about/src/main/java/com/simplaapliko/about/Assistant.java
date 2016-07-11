@@ -25,13 +25,12 @@ import android.util.DisplayMetrics;
 
 import java.util.Locale;
 
-public final class Feedback {
+public final class Assistant {
 
     /**
      * Starts activity chooser to send an email with feedback.
      */
     public static void sendFeedback(Context context, String email, String appName) {
-
         String newLine = "\n";
         StringBuilder body = new StringBuilder();
         body.append(context.getString(R.string.a_feedback_device));
@@ -100,7 +99,6 @@ public final class Feedback {
      * Starts activity chooser to send a message with information about this application.
      */
     public static void shareThisApp(Context context, String message) {
-
         String subject = context.getString(R.string.a_share_this_app_subject);
 
         Intent share = new Intent(Intent.ACTION_SEND);
@@ -122,7 +120,6 @@ public final class Feedback {
     }
 
     public static void showMoreFromDeveloper(Context context, String developerId) {
-
         String uri = context.getString(R.string.a_fragment_about_more_from_developer_link) + developerId;
 
         Intent showMore = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));

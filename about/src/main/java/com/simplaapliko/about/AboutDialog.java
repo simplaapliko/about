@@ -26,12 +26,9 @@ import android.support.v4.app.DialogFragment;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 public class AboutDialog extends DialogFragment {
-
-    // Inner classes
 
     public static class Builder {
 
@@ -73,7 +70,6 @@ public class AboutDialog extends DialogFragment {
         }
 
         public AboutDialog build() {
-
             if (mAppName == null || mAppName.isEmpty()) {
                 throw new IllegalArgumentException("App name is required.");
             }
@@ -83,8 +79,6 @@ public class AboutDialog extends DialogFragment {
         }
     }
 
-
-    // Keys for arguments, saved state variables
     private static final String APP_NAME_KEY = "APP_NAME_KEY";
     private static final String APP_ICON_KEY = "APP_ICON_KEY";
     private static final String DEVELOPER_NAME_KEY = "DEVELOPER_NAME_KEY";
@@ -97,8 +91,6 @@ public class AboutDialog extends DialogFragment {
 
     private static final String HAS_POSITIVE_BUTTON_KEY = "HAS_POSITIVE_BUTTON_KEY";
 
-
-    // Class variables
     private DialogInterface.OnDismissListener mOnDismissListener;
 
     private String mAppName;
@@ -112,9 +104,6 @@ public class AboutDialog extends DialogFragment {
     private boolean mHasSendFeedbackToSection;
 
     private boolean mHasPositiveButton;
-
-
-    // Factory
 
     private static AboutDialog newInstance(
             String appName, int appIcon,
@@ -139,14 +128,7 @@ public class AboutDialog extends DialogFragment {
         return fragment;
     }
 
-
-    // Constructors
-
-    public AboutDialog() {
-    }
-
-
-    // Android Lifecycle
+    public AboutDialog() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -170,7 +152,6 @@ public class AboutDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        // get root view
         View rootView = getActivity().getLayoutInflater().inflate(R.layout.a_dialog_fragment_about, null);
 
         initUiWidgets(rootView);
@@ -178,7 +159,6 @@ public class AboutDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(rootView);
 
-        // set buttons
         if (mHasPositiveButton) {
             builder.setPositiveButton(
                     android.R.string.ok,
@@ -209,9 +189,6 @@ public class AboutDialog extends DialogFragment {
         }
     }
 
-
-    // Public API
-
     public DialogInterface.OnDismissListener getOnDismissListener() {
         return mOnDismissListener;
     }
@@ -219,9 +196,6 @@ public class AboutDialog extends DialogFragment {
     public void setOnDismissListener(final DialogInterface.OnDismissListener onDismissListener) {
         mOnDismissListener = onDismissListener;
     }
-
-
-    // Private API
 
     private void initUiWidgets(View rootView) {
 
@@ -253,11 +227,11 @@ public class AboutDialog extends DialogFragment {
         }
 
         if (mHasSendFeedbackToSection) {
-            rootView.findViewById(R.id.feedback_email_row)
+            rootView.findViewById(R.id.feedback_email)
                     .setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Feedback.sendFeedback(getContext(), mFeedbackEmail, mAppName);
+                            Assistant.sendFeedback(getContext(), mFeedbackEmail, mAppName);
                         }
                     });
 
@@ -270,17 +244,16 @@ public class AboutDialog extends DialogFragment {
         }
 
         if (mHasMoreFromDeveloperSection) {
-            TableRow moveFromDeveloper = (TableRow) rootView.findViewById(R.id.more_from_developer_row);
-            moveFromDeveloper.setOnClickListener(new View.OnClickListener() {
+            rootView.findViewById(R.id.more_from_developer_group)
+                    .setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Feedback.showMoreFromDeveloper(getContext(), mDeveloperId);
+                    Assistant.showMoreFromDeveloper(getContext(), mDeveloperId);
                 }
             });
         } else {
             rootView.findViewById(R.id.more_from_developer_group)
                     .setVisibility(View.GONE);
         }
-
     }
 }

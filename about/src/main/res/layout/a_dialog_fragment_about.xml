@@ -23,7 +23,8 @@
     android:paddingLeft="@dimen/a_dialog_horizontal_padding"
     android:paddingRight="@dimen/a_dialog_horizontal_padding"
     android:paddingTop="@dimen/a_dialog_vertical_padding"
-    android:paddingBottom="@dimen/a_dialog_vertical_padding">
+    android:paddingBottom="@dimen/a_dialog_vertical_padding"
+    >
 
     <LinearLayout
         android:orientation="vertical"
@@ -31,13 +32,15 @@
         android:layout_height="wrap_content"
         android:divider="?android:dividerHorizontal"
         android:showDividers="middle"
-        android:dividerPadding="8dp">
+        android:dividerPadding="8dp"
+        >
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/a_dialog_element_vertical_padding">
+            android:paddingBottom="@dimen/a_dialog_element_vertical_padding"
+            >
 
             <ImageView
                 tools:ignore="ContentDescription"
@@ -46,15 +49,18 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
                 android:paddingBottom="12dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                />
 
             <TextView
                 style="@style/a_AppTheme.TextView.Medium"
-                android:id="@+id/app_name" />
+                android:id="@+id/app_name"
+                />
 
             <TextView
                 style="@style/a_AppTheme.TextView.Small"
-                android:id="@+id/app_version" />
+                android:id="@+id/app_version"
+                />
 
         </LinearLayout>
 
@@ -64,71 +70,67 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/a_dialog_element_vertical_padding"
-            android:paddingBottom="@dimen/a_dialog_element_vertical_padding">
+            android:paddingBottom="@dimen/a_dialog_element_vertical_padding"
+            >
 
             <TextView
+                android:text="@string/a_fragment_about_developed_by"
                 style="@style/a_AppTheme.TextView.Small"
-                android:text="@string/a_fragment_about_developed_by" />
+                />
 
             <TextView
+                android:id="@+id/developer"
                 style="@style/a_AppTheme.TextView.Small"
-                android:id="@+id/developer" />
+
+                />
 
         </LinearLayout>
 
-        <TableLayout
+        <LinearLayout
             android:id="@+id/feedback_email_group"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:stretchColumns="0">
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingTop="@dimen/a_dialog_element_vertical_padding"
+            android:paddingBottom="@dimen/a_dialog_element_vertical_padding"
+            android:clickable="true"
+            >
 
-            <TableRow
-                android:id="@+id/feedback_email_row"
-                android:orientation="vertical"
-                android:background="?android:attr/selectableItemBackground"
-                android:paddingTop="@dimen/a_dialog_element_vertical_padding"
-                android:paddingBottom="@dimen/a_dialog_element_vertical_padding">
+            <TextView
+                android:maxLines="3"
+                android:text="@string/a_fragment_about_feedback"
+                style="@style/a_AppTheme.TextView.Small"
+                />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/feedback_email"
+                style="@style/a_AppTheme.TextView.Small"
+                />
 
-                    <TextView
-                        style="@style/a_AppTheme.TextView.Small"
-                        android:maxLines="3"
-                        android:text="@string/a_fragment_about_feedback" />
+        </LinearLayout>
 
-                    <TextView
-                        style="@style/a_AppTheme.TextView.Small"
-                        android:id="@+id/feedback_email" />
-
-                </LinearLayout>
-            </TableRow>
-        </TableLayout>
-
-        <TableLayout
+        <LinearLayout
             android:id="@+id/more_from_developer_group"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:stretchColumns="0">
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingTop="@dimen/a_dialog_element_vertical_padding"
+            android:paddingBottom="@dimen/a_dialog_element_vertical_padding"
+            android:clickable="true"
+            >
 
-            <TableRow
-                android:id="@+id/more_from_developer_row"
-                android:background="?android:attr/selectableItemBackground"
-                android:paddingTop="@dimen/a_dialog_element_vertical_padding"
-                android:paddingBottom="@dimen/a_dialog_element_vertical_padding">
-
-                <TextView
-                    style="@style/a_AppTheme.TextView.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawableRight="@drawable/a_ic_google_play_grey600_24dp_about_dialog"
-                    android:drawableEnd="@drawable/a_ic_google_play_grey600_24dp_about_dialog"
-                    android:drawablePadding="8dp"
-                    android:text="@string/a_fragment_about_more_from_developer"
-                    android:maxLines="3" />
-            </TableRow>
-        </TableLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:drawableRight="@drawable/a_ic_google_play_grey600_24dp"
+                android:drawableEnd="@drawable/a_ic_google_play_grey600_24dp"
+                android:drawablePadding="8dp"
+                android:text="@string/a_fragment_about_more_from_developer"
+                android:maxLines="3"
+                style="@style/a_AppTheme.TextView.Small"
+                />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
