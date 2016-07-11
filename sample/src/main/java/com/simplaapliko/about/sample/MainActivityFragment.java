@@ -29,7 +29,8 @@ import android.widget.Toast;
 
 import com.simplaapliko.about.AboutDialog;
 import com.simplaapliko.about.AppInfo;
-import com.simplaapliko.about.Feedback;
+import com.simplaapliko.about.Assistant;
+import com.simplaapliko.about.SupportThisProjectDialog;
 
 public class MainActivityFragment extends Fragment implements DialogInterface.OnDismissListener, View.OnClickListener {
 
@@ -60,7 +61,10 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
         rootView.findViewById(R.id.share_this_app)
                 .setOnClickListener(this);
 
-        rootView.findViewById(R.id.show_dialog)
+        rootView.findViewById(R.id.show_about_dialog)
+                .setOnClickListener(this);
+
+        rootView.findViewById(R.id.show_support_this_project_dialog)
                 .setOnClickListener(this);
 
         return rootView;
@@ -84,13 +88,13 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
                 mAppVersion.setText(String.valueOf(AppInfo.getAppVersionCode(getContext())));
                 break;
             case R.id.send_feedback:
-                Feedback.sendFeedback(getContext(), "myEmail@mail.com", "Util");
+                Assistant.sendFeedback(getContext(), "myEmail@mail.com", "Util");
                 break;
             case R.id.share_this_app:
-                Feedback.shareThisApp(getContext(), "This App has some nice features");
+                Assistant.shareThisApp(getContext(), "This App has some nice features");
                 break;
-            case R.id.show_dialog:
-                DialogFragment dialog = new AboutDialog.Builder()
+            case R.id.show_about_dialog:
+                AboutDialog aboutDialog = new AboutDialog.Builder()
                         .setAppName("Application Name")
                         .setAppIcon(R.mipmap.ic_launcher)
                         .setDeveloperName("Developer")
@@ -99,8 +103,16 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
                         .setHasPositiveButton(true)
                         .build();
 
-                ((AboutDialog) dialog).setOnDismissListener(MainActivityFragment.this);
-                dialog.show(getFragmentManager(), AboutDialog.class.getSimpleName());
+                aboutDialog.setOnDismissListener(MainActivityFragment.this);
+                aboutDialog.show(getFragmentManager(), AboutDialog.class.getSimpleName());
+                break;
+            case R.id.show_support_this_project_dialog:
+                DialogFragment supportDialog = new SupportThisProjectDialog.Builder()
+                        .setLinkToProjectPage("https://simplaapliko.com/#donate")
+                        .setHasPositiveButton(true)
+                        .build();
+
+                supportDialog.show(getFragmentManager(), SupportThisProjectDialog.class.getSimpleName());
                 break;
         }
     }

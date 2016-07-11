@@ -24,5 +24,6 @@
     <string name="share_this_app">Share this app</string>
 
     <string name="show_about_dialog">Show About Dialog</string>
+    <string name="show_support_this_project_dialog">Show Support this project Dialog</string>
 
 </resources>
