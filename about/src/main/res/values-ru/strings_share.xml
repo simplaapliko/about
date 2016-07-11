@@ -16,5 +16,7 @@
   -->
 
 <resources>
+    <string name="a_share_this_app">Поделиться</string>
+
     <string name="a_share_this_app_subject">Поделиться с помощью:</string>
 </resources>
