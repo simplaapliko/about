@@ -132,4 +132,9 @@ public final class Assistant {
             context.startActivity(intent);
         }
     }
+
+    public static void showPage(Context context, String url) {
+        Intent browserIntent  = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        context.startActivity(browserIntent );
+    }
 }
