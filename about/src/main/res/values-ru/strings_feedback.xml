@@ -19,7 +19,6 @@
     <string name="a_send_feedback">Отправить отзыв</string>
 
     <string name="a_feedback_subject">Обратная связь</string>
-    <string name="a_feedback_dialog_intent_chooser_title">Что использовать?</string>
     <string name="a_feedback_device">Устройство:</string>
     <string name="a_feedback_android_version">Версия Android:</string>
     <string name="a_feedback_app_version">Версия приложения:</string>

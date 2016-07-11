@@ -30,7 +30,58 @@ public final class Assistant {
     /**
      * Starts activity chooser to send an email with feedback.
      */
+    public static void sendFeedback(Activity activity, String email, String appName) {
+        Intent feedback = getFeedbackIntent(activity, email, appName);
+        startActivity(activity, feedback);
+    }
+
+    /**
+     * Starts activity chooser to send an email with feedback.
+     */
     public static void sendFeedback(Context context, String email, String appName) {
+        Intent feedback = getFeedbackIntent(context, email, appName);
+        startActivity(context, feedback);
+    }
+
+    /**
+     * Starts activity chooser to send a message with information about this application.
+     */
+    public static void shareThisApp(Activity activity, String message) {
+        Intent share = getSendIntent(message);
+        startActivity(activity, share);
+    }
+
+    /**
+     * Starts activity chooser to send a message with information about this application.
+     */
+    public static void shareThisApp(Context context, String message) {
+        Intent share = getSendIntent(message);
+        startActivity(context, share);
+    }
+
+    public static void showMoreFromDeveloper(Activity activity, String developerId) {
+        String uri = activity.getString(R.string.a_fragment_about_more_from_developer_link) + developerId;
+        Intent showMore = getViewIntent(uri);
+        startActivity(activity, showMore);
+    }
+
+    public static void showMoreFromDeveloper(Context context, String developerId) {
+        String uri = context.getString(R.string.a_fragment_about_more_from_developer_link) + developerId;
+        Intent showMore = getViewIntent(uri);
+        startActivity(context, showMore);
+    }
+
+    public static void showPage(Activity activity, String url) {
+        Intent browserIntent = getViewIntent(url);
+        startActivity(activity, browserIntent);
+    }
+
+    public static void showPage(Context context, String url) {
+        Intent browserIntent = getViewIntent(url);
+        startActivity(context, browserIntent);
+    }
+
+    private static Intent getFeedbackIntent(Context context, String email, String appName) {
         String newLine = "\n";
         StringBuilder body = new StringBuilder();
         body.append(context.getString(R.string.a_feedback_device));
@@ -79,62 +130,30 @@ public final class Assistant {
                 "&body=" + Uri.encode(body.toString());
         Uri uri = Uri.parse(uriText);
 
-        Intent feedback = new Intent(Intent.ACTION_SENDTO);
-        feedback.setType("message/rfc822");
-        feedback.setData(uri);
-        if (context instanceof Activity) {
-            context.startActivity(Intent.createChooser(
-                    feedback,
-                    context.getString(R.string.a_feedback_dialog_intent_chooser_title)));
-        } else {
-            Intent intent = Intent.createChooser(
-                    feedback,
-                    context.getString(R.string.a_feedback_dialog_intent_chooser_title));
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
-        }
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setType("message/rfc822");
+        intent.setData(uri);
+        return intent;
     }
 
-    /**
-     * Starts activity chooser to send a message with information about this application.
-     */
-    public static void shareThisApp(Context context, String message) {
-        String subject = context.getString(R.string.a_share_this_app_subject);
-
-        Intent share = new Intent(Intent.ACTION_SEND);
-        share.setType("text/plain");
-        share.putExtra(Intent.EXTRA_SUBJECT, subject);
-        share.putExtra(Intent.EXTRA_TEXT, message);
-
-        if (context instanceof Activity) {
-            context.startActivity(Intent.createChooser(share, subject));
-        } else {
-            Intent intent = Intent.createChooser(share, subject);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
-        }
+    private static Intent getSendIntent(String message) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        return intent;
     }
 
-    public static void showMoreFromDeveloper(Context context, int developerId) {
-        showMoreFromDeveloper(context, context.getString(developerId));
+    private static Intent getViewIntent(String url) {
+        return new Intent(Intent.ACTION_VIEW, Uri.parse(url));
     }
 
-    public static void showMoreFromDeveloper(Context context, String developerId) {
-        String uri = context.getString(R.string.a_fragment_about_more_from_developer_link) + developerId;
-
-        Intent showMore = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-
-        if (context instanceof Activity) {
-            context.startActivity(showMore);
-        } else {
-            Intent intent = Intent.createChooser(showMore, null);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
-        }
+    private static void startActivity(Activity activity, Intent intentToStart) {
+        activity.startActivity(intentToStart);
     }
 
-    public static void showPage(Context context, String url) {
-        Intent browserIntent  = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        context.startActivity(browserIntent );
+    private static void startActivity(Context context, Intent intentToStart) {
+        Intent intent = Intent.createChooser(intentToStart, null);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }
