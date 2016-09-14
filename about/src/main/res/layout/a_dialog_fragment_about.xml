@@ -124,8 +124,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
-                android:drawableRight="@mipmap/a_ic_google_play_grey600_24dp"
-                android:drawableEnd="@mipmap/a_ic_google_play_grey600_24dp"
+                android:drawableRight="@drawable/a_google_play"
+                android:drawableEnd="@drawable/a_google_play"
                 android:drawablePadding="8dp"
                 android:text="@string/a_fragment_about_more_from_developer"
                 android:maxLines="3"

@@ -57,8 +57,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
-                android:drawableRight="@mipmap/a_ic_gift_grey600_24dp"
-                android:drawableEnd="@mipmap/a_ic_gift_grey600_24dp"
+                android:drawableRight="@drawable/a_gift"
+                android:drawableEnd="@drawable/a_gift"
                 android:drawablePadding="8dp"
                 android:text="@string/a_support_this_project"
                 style="@style/a_AppTheme.TextView.Small"
