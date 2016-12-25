@@ -28,40 +28,40 @@ import android.view.View;
 public class SupportThisProjectDialog extends DialogFragment {
     public static class Builder {
 
-        private String mLinkProjectPage;
-        private boolean mHasPositiveButton;
+        private String mProjectPageLink;
+        private boolean mHasNegativeButton;
 
-        public Builder setLinkToProjectPage(String linkToSupportPage) {
-            mLinkProjectPage = linkToSupportPage;
+        public Builder setLinkToProjectPage(String projectPageLink) {
+            mProjectPageLink = projectPageLink;
             return this;
         }
 
-        public Builder setHasPositiveButton(boolean hasPositiveButton) {
-            mHasPositiveButton = hasPositiveButton;
+        public Builder setHasNegativeButton(boolean hasNegativeButton) {
+            mHasNegativeButton = hasNegativeButton;
             return this;
         }
 
         public SupportThisProjectDialog build() {
-            if (TextUtils.isEmpty(mLinkProjectPage)) {
+            if (TextUtils.isEmpty(mProjectPageLink)) {
                 throw new IllegalArgumentException("Link to project page is required.");
             }
 
-            return newInstance(mLinkProjectPage, mHasPositiveButton);
+            return newInstance(mProjectPageLink, mHasNegativeButton);
         }
     }
 
     private static final String LINK_TO_PROJECT_PAGE_KEY = "LINK_TO_PROJECT_PAGE_KEY";
-    private static final String HAS_POSITIVE_BUTTON_KEY = "HAS_POSITIVE_BUTTON_KEY";
+    private static final String HAS_NEGATIVE_BUTTON_KEY = "HAS_NEGATIVE_BUTTON_KEY";
 
-    private String mLinkProjectPage;
-    private boolean mHasPositiveButton;
+    private String mProjectPageLink;
+    private boolean mHasNegativeButton;
 
-    private static SupportThisProjectDialog newInstance(String link, boolean hasPositiveButton) {
+    private static SupportThisProjectDialog newInstance(String link, boolean hasNegativeButton) {
 
         SupportThisProjectDialog fragment = new SupportThisProjectDialog();
         Bundle args = new Bundle();
         args.putString(LINK_TO_PROJECT_PAGE_KEY, link);
-        args.putBoolean(HAS_POSITIVE_BUTTON_KEY, hasPositiveButton);
+        args.putBoolean(HAS_NEGATIVE_BUTTON_KEY, hasNegativeButton);
 
         fragment.setArguments(args);
         return fragment;
@@ -75,8 +75,8 @@ public class SupportThisProjectDialog extends DialogFragment {
 
         Bundle args = getArguments();
         if (args != null) {
-            mLinkProjectPage = args.getString(LINK_TO_PROJECT_PAGE_KEY);
-            mHasPositiveButton = args.getBoolean(HAS_POSITIVE_BUTTON_KEY);
+            mProjectPageLink = args.getString(LINK_TO_PROJECT_PAGE_KEY);
+            mHasNegativeButton = args.getBoolean(HAS_NEGATIVE_BUTTON_KEY);
         }
 
         setCancelable(false);
@@ -92,9 +92,9 @@ public class SupportThisProjectDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(rootView);
 
-        if (mHasPositiveButton) {
-            builder.setPositiveButton(
-                    android.R.string.ok,
+        if (mHasNegativeButton) {
+            builder.setNegativeButton(
+                    android.R.string.cancel,
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -111,7 +111,7 @@ public class SupportThisProjectDialog extends DialogFragment {
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Assistant.showPage(getContext(), mLinkProjectPage);
+                        Assistant.showPage(getContext(), mProjectPageLink);
                     }
                 });
     }

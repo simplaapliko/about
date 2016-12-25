@@ -109,7 +109,7 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
             case R.id.show_support_this_project_dialog:
                 DialogFragment supportDialog = new SupportThisProjectDialog.Builder()
                         .setLinkToProjectPage("https://simplaapliko.com/#donate")
-                        .setHasPositiveButton(true)
+                        .setHasNegativeButton(true)
                         .build();
 
                 supportDialog.show(getFragmentManager(), SupportThisProjectDialog.class.getSimpleName());
