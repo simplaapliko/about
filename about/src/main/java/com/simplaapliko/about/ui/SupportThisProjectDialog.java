@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.simplaapliko.about;
+package com.simplaapliko.about.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -24,6 +24,9 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.text.TextUtils;
 import android.view.View;
+
+import com.simplaapliko.about.R;
+import com.simplaapliko.about.util.Assistant;
 
 public class SupportThisProjectDialog extends DialogFragment {
     public static class Builder {

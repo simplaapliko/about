@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.simplaapliko.about;
+package com.simplaapliko.about.util;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,6 +22,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.util.DisplayMetrics;
+
+import com.simplaapliko.about.R;
 
 import java.util.Locale;
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.simplaapliko.about;
+package com.simplaapliko.about.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -27,6 +27,10 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.simplaapliko.about.util.AppInfo;
+import com.simplaapliko.about.util.Assistant;
+import com.simplaapliko.about.R;
 
 public class AboutDialog extends DialogFragment {
 

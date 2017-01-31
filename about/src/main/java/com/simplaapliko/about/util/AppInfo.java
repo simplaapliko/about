@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.simplaapliko.about;
+package com.simplaapliko.about.util;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;

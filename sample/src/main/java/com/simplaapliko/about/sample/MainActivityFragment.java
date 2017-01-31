@@ -27,10 +27,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.simplaapliko.about.AboutDialog;
-import com.simplaapliko.about.AppInfo;
-import com.simplaapliko.about.Assistant;
-import com.simplaapliko.about.SupportThisProjectDialog;
+import com.simplaapliko.about.ui.AboutDialog;
+import com.simplaapliko.about.ui.SupportThisProjectDialog;
+import com.simplaapliko.about.util.AppInfo;
+import com.simplaapliko.about.util.Assistant;
 
 public class MainActivityFragment extends Fragment implements DialogInterface.OnDismissListener, View.OnClickListener {
 
