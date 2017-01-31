@@ -33,7 +33,9 @@ public final class Assistant {
      * Starts activity chooser to send an email with feedback.
      */
     public static void sendFeedback(Activity activity, String email, String appName) {
-        Intent feedback = getFeedbackIntent(activity, email, appName);
+        String subject = getFeedbackSubject(activity, appName);
+        String body = getFeedbackBody(activity);
+        Intent feedback = getSendToIntent(subject, body, email);
         startActivity(activity, feedback);
     }
 
@@ -41,7 +43,9 @@ public final class Assistant {
      * Starts activity chooser to send an email with feedback.
      */
     public static void sendFeedback(Context context, String email, String appName) {
-        Intent feedback = getFeedbackIntent(context, email, appName);
+        String subject = getFeedbackSubject(context, appName);
+        String body = getFeedbackBody(context);
+        Intent feedback = getSendToIntent(subject, body, email);
         startActivity(context, feedback);
     }
 
@@ -83,7 +87,27 @@ public final class Assistant {
         startActivity(context, browserIntent);
     }
 
-    private static Intent getFeedbackIntent(Context context, String email, String appName) {
+    public static Intent getSendToIntent(String subject, String body, String email) {
+
+        String uriText = "mailto:" + email +
+                "?subject=" + Uri.encode(subject) +
+                "&body=" + Uri.encode(body);
+        Uri uri = Uri.parse(uriText);
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setType("message/rfc822");
+        intent.setData(uri);
+        return intent;
+    }
+
+    public static Intent getSendIntent(String title) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, title);
+        return intent;
+    }
+
+    private static String getFeedbackBody(Context context) {
         String newLine = "\n";
         StringBuilder body = new StringBuilder();
         body.append(context.getString(R.string.a_feedback_device));
@@ -125,24 +149,11 @@ public final class Assistant {
         body.append(newLine);
         body.append(newLine);
 
-        String subject = "[" + appName + "] " + context.getString(R.string.a_feedback_subject);
-
-        String uriText = "mailto:" + email +
-                "?subject=" + Uri.encode(subject) +
-                "&body=" + Uri.encode(body.toString());
-        Uri uri = Uri.parse(uriText);
-
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setType("message/rfc822");
-        intent.setData(uri);
-        return intent;
+        return body.toString();
     }
 
-    private static Intent getSendIntent(String message) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, message);
-        return intent;
+    private static String getFeedbackSubject(Context context, String appName) {
+        return  "[" + appName + "] " + context.getString(R.string.a_feedback_subject);
     }
 
     private static Intent getViewIntent(String url) {
