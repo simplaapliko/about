@@ -74,7 +74,7 @@
             >
 
             <TextView
-                android:text="@string/a_fragment_about_developed_by"
+                android:text="@string/a_about_developed_by"
                 style="@style/a_AppTheme.TextView.Small"
                 />
 
@@ -98,7 +98,7 @@
 
             <TextView
                 android:maxLines="3"
-                android:text="@string/a_fragment_about_feedback"
+                android:text="@string/a_about_feedback"
                 style="@style/a_AppTheme.TextView.Small"
                 />
 
@@ -126,7 +126,7 @@
                 android:drawableRight="@drawable/a_ic_google_play"
                 android:drawableEnd="@drawable/a_ic_google_play"
                 android:drawablePadding="8dp"
-                android:text="@string/a_fragment_about_more_from_developer"
+                android:text="@string/a_about_more_from_developer"
                 android:maxLines="3"
                 style="@style/a_AppTheme.TextView.Small"
                 />

@@ -20,13 +20,18 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
+import com.simplaapliko.about.R;
+
 public final class AppInfo {
 
     /**
      * Get app version name and code
      */
     public static String getAppVersion(Context context) {
-        return getAppVersionName(context) + " (" + getAppVersionCode(context) + ")";
+        return String.format("%s %s (%s)",
+                context.getString(R.string.a_about_version),
+                getAppVersionName(context),
+                getAppVersionCode(context));
     }
 
     /**

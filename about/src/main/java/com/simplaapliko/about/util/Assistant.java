@@ -66,13 +66,13 @@ public final class Assistant {
     }
 
     public static void showMoreFromDeveloper(Activity activity, String developerId) {
-        String uri = activity.getString(R.string.a_fragment_about_more_from_developer_link) + developerId;
+        String uri = activity.getString(R.string.a_about_more_from_developer_link) + developerId;
         Intent showMore = getViewIntent(uri);
         startActivity(activity, showMore);
     }
 
     public static void showMoreFromDeveloper(Context context, String developerId) {
-        String uri = context.getString(R.string.a_fragment_about_more_from_developer_link) + developerId;
+        String uri = context.getString(R.string.a_about_more_from_developer_link) + developerId;
         Intent showMore = getViewIntent(uri);
         startActivity(context, showMore);
     }

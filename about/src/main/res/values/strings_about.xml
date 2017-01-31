@@ -17,7 +17,8 @@
 <resources>
     <string name="a_about">About</string>
 
-    <string name="a_fragment_about_developed_by">Developed by:</string>
-    <string name="a_fragment_about_feedback">Please send any feedback to:</string>
-    <string name="a_fragment_about_more_from_developer">More from developer</string>
+    <string name="a_about_developed_by">Developed by:</string>
+    <string name="a_about_feedback">Please send any feedback to:</string>
+    <string name="a_about_more_from_developer">More from developer</string>
+    <string name="a_about_version">Version</string>
 </resources>
