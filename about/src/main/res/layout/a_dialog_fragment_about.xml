@@ -31,8 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="?android:dividerHorizontal"
-        android:showDividers="middle"
         android:dividerPadding="8dp"
+        android:showDividers="middle"
         >
 
         <LinearLayout
@@ -81,7 +81,6 @@
             <TextView
                 android:id="@+id/developer"
                 style="@style/a_AppTheme.TextView.Small"
-
                 />
 
         </LinearLayout>

@@ -231,7 +231,7 @@ public class AboutDialog extends DialogFragment {
         }
 
         if (mHasSendFeedbackToSection) {
-            rootView.findViewById(R.id.feedback_email)
+            rootView.findViewById(R.id.feedback_email_group)
                     .setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
