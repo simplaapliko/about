@@ -156,7 +156,7 @@ public class AboutDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        View rootView = getActivity().getLayoutInflater().inflate(R.layout.a_dialog_fragment_about, null);
+        View rootView = getActivity().getLayoutInflater().inflate(R.layout.a_fragment_about, null);
 
         initUiWidgets(rootView);
 

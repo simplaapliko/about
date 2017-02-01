@@ -88,7 +88,7 @@ public class SupportThisProjectDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        View rootView = getActivity().getLayoutInflater().inflate(R.layout.a_dialog_fragment_support_this_project, null);
+        View rootView = getActivity().getLayoutInflater().inflate(R.layout.a_fragment_support_this_project, null);
 
         initUiWidgets(rootView);
 
