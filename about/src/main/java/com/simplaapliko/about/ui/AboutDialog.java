@@ -252,7 +252,7 @@ public class AboutDialog extends DialogFragment {
                     .setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Assistant.showMoreFromDeveloper(getContext(), mDeveloperId);
+                    Assistant.showMoreFromDeveloper(getActivity(), mDeveloperId);
                 }
             });
         } else {
