@@ -16,10 +16,7 @@
   -->
 
 <resources>
-    <string name="a_about">About</string>
+    <string name="a_support_this_project">Das Projekt unterstützen</string>
 
-    <string name="a_about_developed_by">Developed by:</string>
-    <string name="a_about_feedback">Please send any feedback to:</string>
-    <string name="a_about_more_from_developer">More from developer</string>
-    <string name="a_about_version">Version</string>
+    <string name="a_support_this_project_message">Wenn Sie mit meiner Software glücklich sind und meine aktuellen und zukünftigen Projekte unterstützen möchten, so spenden Sie bitte.\nIch weiss Ihre Spende zu schätzen.\nVielen Dank!</string>
 </resources>
