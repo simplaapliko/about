@@ -107,6 +107,20 @@ public final class Assistant {
         return intent;
     }
 
+    public static Intent getViewIntent(String url) {
+        return new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+    }
+
+    public static void startActivity(Activity activity, Intent intentToStart) {
+        activity.startActivity(intentToStart);
+    }
+
+    public static void startActivity(Context context, Intent intentToStart) {
+        Intent intent = Intent.createChooser(intentToStart, null);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+
     private static String getFeedbackBody(Context context) {
         String newLine = "\n";
         StringBuilder body = new StringBuilder();
@@ -154,19 +168,5 @@ public final class Assistant {
 
     private static String getFeedbackSubject(Context context, String appName) {
         return  "[" + appName + "] " + context.getString(R.string.a_feedback_subject);
-    }
-
-    private static Intent getViewIntent(String url) {
-        return new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-    }
-
-    private static void startActivity(Activity activity, Intent intentToStart) {
-        activity.startActivity(intentToStart);
-    }
-
-    private static void startActivity(Context context, Intent intentToStart) {
-        Intent intent = Intent.createChooser(intentToStart, null);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
     }
 }
