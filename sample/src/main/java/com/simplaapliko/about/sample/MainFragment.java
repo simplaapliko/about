@@ -30,11 +30,11 @@ import com.simplaapliko.about.ui.AboutDialog;
 import com.simplaapliko.about.util.AppInfo;
 import com.simplaapliko.about.util.Assistant;
 
-public class MainActivityFragment extends Fragment implements DialogInterface.OnDismissListener, View.OnClickListener {
+public class MainFragment extends Fragment implements DialogInterface.OnDismissListener, View.OnClickListener {
 
     private TextView mAppVersion;
 
-    public MainActivityFragment() {
+    public MainFragment() {
     }
 
     @SuppressLint("SetTextI18n")
@@ -98,7 +98,7 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
                         .setHasPositiveButton(true)
                         .build();
 
-                aboutDialog.setOnDismissListener(MainActivityFragment.this);
+                aboutDialog.setOnDismissListener(MainFragment.this);
                 aboutDialog.show(getFragmentManager(), AboutDialog.class.getSimpleName());
                 break;
         }
