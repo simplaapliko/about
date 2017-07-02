@@ -16,7 +16,5 @@
   -->
 
 <resources>
-    <string name="a_support_this_project">Support this project</string>
-
-    <string name="a_support_this_project_message">If you are a happy user of my applications and would like to support my project\'s further development, feel free to donate.\nYour donation is highly appreciated.\nThank you!</string>
+    <string name="a_share_this_app">Condividi questa app</string>
 </resources>
