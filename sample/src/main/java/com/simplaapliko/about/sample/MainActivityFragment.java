@@ -19,7 +19,6 @@ package com.simplaapliko.about.sample;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +27,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.simplaapliko.about.ui.AboutDialog;
-import com.simplaapliko.about.ui.SupportThisProjectDialog;
 import com.simplaapliko.about.util.AppInfo;
 import com.simplaapliko.about.util.Assistant;
 
@@ -62,9 +60,6 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
                 .setOnClickListener(this);
 
         rootView.findViewById(R.id.show_about_dialog)
-                .setOnClickListener(this);
-
-        rootView.findViewById(R.id.show_support_this_project_dialog)
                 .setOnClickListener(this);
 
         return rootView;
@@ -105,14 +100,6 @@ public class MainActivityFragment extends Fragment implements DialogInterface.On
 
                 aboutDialog.setOnDismissListener(MainActivityFragment.this);
                 aboutDialog.show(getFragmentManager(), AboutDialog.class.getSimpleName());
-                break;
-            case R.id.show_support_this_project_dialog:
-                DialogFragment supportDialog = new SupportThisProjectDialog.Builder()
-                        .setLinkToProjectPage("https://simplaapliko.com/#donate")
-                        .setHasNegativeButton(true)
-                        .build();
-
-                supportDialog.show(getFragmentManager(), SupportThisProjectDialog.class.getSimpleName());
                 break;
         }
     }
