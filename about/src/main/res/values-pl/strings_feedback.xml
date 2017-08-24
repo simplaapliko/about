@@ -23,7 +23,7 @@
     <string name="a_feedback_android_version">Wersja Androida:</string>
     <string name="a_feedback_app_version">Wersja aplikacji:</string>
     <string name="a_feedback_region">Język / Region:</string>
-    <string name="a_feedback_screen">Zrzut ekranu:</string>
+    <string name="a_feedback_screen">Wyświetlacz:</string>
     <string name="a_feedback_screen_width">szerokość:</string>
     <string name="a_feedback_screen_height">wysokość:</string>
     <string name="a_feedback_message">Napisz o swoim problemie albo sugestii.\nDziękujemy!\n_____</string>
