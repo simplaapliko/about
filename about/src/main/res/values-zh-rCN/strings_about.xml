@@ -16,7 +16,10 @@
   -->
 
 <resources>
+    <string name="a_about">关于</string>
+
     <string name="a_about_developed_by">开发者:</string>
     <string name="a_about_feedback">如有任何意见或建议，请发送邮件至:</string>
     <string name="a_about_more_from_developer">发现更多</string>
+    <string name="a_about_version">版本</string>
 </resources>
