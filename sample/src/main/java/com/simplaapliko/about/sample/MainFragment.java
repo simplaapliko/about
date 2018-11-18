@@ -19,6 +19,8 @@ package com.simplaapliko.about.sample;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,11 +28,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.simplaapliko.about.ui.AboutDialog;
 import com.simplaapliko.about.util.AppInfo;
 import com.simplaapliko.about.util.Assistant;
 
-public class MainFragment extends Fragment implements DialogInterface.OnDismissListener, View.OnClickListener {
+public class MainFragment extends Fragment implements DialogInterface.OnDismissListener,
+        View.OnClickListener {
 
     private TextView mAppVersion;
 
@@ -39,10 +41,11 @@ public class MainFragment extends Fragment implements DialogInterface.OnDismissL
 
     @SuppressLint("SetTextI18n")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        mAppVersion = (TextView) rootView.findViewById(R.id.app_version);
+        mAppVersion = rootView.findViewById(R.id.app_version);
 
         rootView.findViewById(R.id.get_version)
                 .setOnClickListener(this);
@@ -57,9 +60,6 @@ public class MainFragment extends Fragment implements DialogInterface.OnDismissL
                 .setOnClickListener(this);
 
         rootView.findViewById(R.id.share_this_app)
-                .setOnClickListener(this);
-
-        rootView.findViewById(R.id.show_about_dialog)
                 .setOnClickListener(this);
 
         return rootView;
@@ -83,23 +83,10 @@ public class MainFragment extends Fragment implements DialogInterface.OnDismissL
                 mAppVersion.setText(String.valueOf(AppInfo.getAppVersionCode(getContext())));
                 break;
             case R.id.send_feedback:
-                Assistant.sendFeedback(getContext(), "myEmail@mail.com", "Util");
+                Assistant.sendFeedback(getContext(), "myEmail@mail.com", "About");
                 break;
             case R.id.share_this_app:
                 Assistant.shareThisApp(getContext(), "This App has some nice features");
-                break;
-            case R.id.show_about_dialog:
-                AboutDialog aboutDialog = new AboutDialog.Builder()
-                        .setAppName("Application Name")
-                        .setAppIcon(R.mipmap.ic_launcher)
-                        .setDeveloperName("Developer")
-                        .setDeveloperId("Developer")
-                        .setFeedbackEmail("developer@email.com")
-                        .setHasPositiveButton(true)
-                        .build();
-
-                aboutDialog.setOnDismissListener(MainFragment.this);
-                aboutDialog.show(getFragmentManager(), AboutDialog.class.getSimpleName());
                 break;
         }
     }

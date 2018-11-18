@@ -69,12 +69,6 @@
             android:layout_height="wrap_content"
             android:text="@string/share_this_app" />
 
-        <Button
-            android:id="@+id/show_about_dialog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/show_about_dialog" />
-
     </LinearLayout>
 
 </ScrollView>
