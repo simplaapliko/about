@@ -96,7 +96,7 @@ public final class Assistant {
         Uri uri = Uri.parse(uriText);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setDataAndType(uri, "message/rfc822");
+        intent.setData(uri);
         return intent;
     }
 
