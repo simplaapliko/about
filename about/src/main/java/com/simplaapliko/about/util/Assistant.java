@@ -27,6 +27,7 @@ import com.simplaapliko.about.R;
 
 import java.util.Locale;
 
+@SuppressWarnings({"WeakerAccess", "unused"})
 public final class Assistant {
 
     /**
@@ -95,8 +96,7 @@ public final class Assistant {
         Uri uri = Uri.parse(uriText);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setType("message/rfc822");
-        intent.setData(uri);
+        intent.setDataAndType(uri, "message/rfc822");
         return intent;
     }
 
