@@ -16,7 +16,7 @@
   -->
 
 <resources>
-    <string name="a_send_feedback">Envoyez des commentaires</string>
+    <string name="a_send_feedback">Envoyer des commentaires</string>
 
     <string name="a_feedback_subject">Commentaires</string>
     <string name="a_feedback_device">Modèle d\'appareil:</string>
@@ -26,5 +26,5 @@
     <string name="a_feedback_screen">Écran:</string>
     <string name="a_feedback_screen_width">largeur:</string>
     <string name="a_feedback_screen_height">hauteur:</string>
-    <string name="a_feedback_message">Écrivez sur votre problème ou si vous avez des suggestions.\nMerci!\n_____</string>
+    <string name="a_feedback_message">Écrivez à propos de votre problème ou si vous avez des suggestions.\nMerci!\n_____</string>
 </resources>
