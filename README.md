@@ -10,11 +10,17 @@ A simple library to show information about your application.
 Add the following to your `build.gradle`:
 ```gradle
 repositories {
-    jcenter()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    implementation 'com.simplaapliko:about:1.2.6'
+    ...
+
+    // add specific version
+    implementation 'com.github.simplaapliko:about:x.y.z@aar'
+
+    // or a snapshot
+    // implementation 'com.github.simplaapliko:about:master-SNAPSHOT@aar'
 }
 ```
 
