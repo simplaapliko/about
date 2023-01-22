@@ -16,10 +16,7 @@
   -->
 
 <resources>
-    <string name="a_about">Hakkında</string>
-
-    <string name="a_about_developed_by">Geliştirici:</string>
-    <string name="a_about_feedback">Lütfen geri bildirimleri bu adrese gönderin:</string>
-    <string name="a_about_more_from_developer">Geliştiriciden daha fazlası</string>
     <string name="a_about_version">Versiyon</string>
+    <string name="a_feedback_message">Sorununuzu veya tavsiyenizi açıklayın.\Teşekkürler!\n_____</string>
+    <string name="a_share_this_app">Uygulamayı paylaş</string>
 </resources>

@@ -16,10 +16,7 @@
   -->
 
 <resources>
-    <string name="a_about">Über</string>
-
-    <string name="a_about_developed_by">Entwickelt von:</string>
-    <string name="a_about_feedback">Bitte senden Sie mir Ihr Feedback an:</string>
-    <string name="a_about_more_from_developer">Mehr vom Entwickler</string>
     <string name="a_about_version">Version</string>
+    <string name="a_feedback_message">Bitte beschreiben Sie Ihr Problem oder Verbesserungsvorschlag.\nVielen Dank!\n_____</string>
+    <string name="a_share_this_app">Diese App teilen</string>
 </resources>
