@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.simplaapliko:about:1.2.5'
+    implementation 'com.simplaapliko:about:1.2.6'
 }
 ```
 
