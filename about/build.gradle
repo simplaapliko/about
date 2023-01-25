@@ -45,6 +45,7 @@ android {
 }
 
 dependencies {
+    implementation "com.github.simplaapliko:i18n:0.1.0"
 }
 
 afterEvaluate {
