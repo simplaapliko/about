@@ -26,7 +26,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.simplaapliko.about.util.AppInfo;
-import com.simplaapliko.about.util.Assistant;
+import com.simplaapliko.about.util.Feedback;
+import com.simplaapliko.about.util.Share;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -84,10 +85,10 @@ public class MainFragment extends Fragment implements DialogInterface.OnDismissL
                 mAppVersion.setText(String.valueOf(AppInfo.getAppVersionCode(getContext())));
                 break;
             case R.id.send_feedback:
-                Assistant.sendFeedback(getContext(), "myEmail@mail.com", "About");
+                Feedback.send(getContext(), "myEmail@mail.com", "About");
                 break;
             case R.id.share_this_app:
-                Assistant.shareThisApp(getContext(), "This App has some nice features");
+                Share.share(getContext(), "This App has some nice features");
                 break;
         }
     }
