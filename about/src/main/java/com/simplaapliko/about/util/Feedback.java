@@ -52,7 +52,7 @@ public final class Feedback {
         startActivity(context, feedback);
     }
 
-    private static Intent getSendToIntent(String subject, String body, String email) {
+    public static Intent getSendToIntent(String subject, String body, String email) {
 
         String uriText = "mailto:" + email +
                 "?subject=" + Uri.encode(subject) +
