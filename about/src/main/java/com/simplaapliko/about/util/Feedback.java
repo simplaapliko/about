@@ -102,7 +102,7 @@ public final class Feedback {
         body.append(Float.toString(dm.densityDpi/160));
         body.append(newLine);
         body.append(newLine);
-        body.append(context.getString(R.string.a_feedback_message));
+        body.append(context.getString(R.string.app_feedback_message));
         body.append(newLine);
         body.append(newLine);
 

@@ -29,7 +29,7 @@ public final class AppInfo {
      */
     public static String getAppVersion(Context context) {
         return String.format("%s %s (%s)",
-                context.getString(R.string.a_about_version),
+                context.getString(R.string.version),
                 getAppVersionName(context),
                 getAppVersionCode(context));
     }
